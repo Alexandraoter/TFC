@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscador de Personas</title> <style>
+        /* Estilos mejorados para una interfaz más atractiva */
+        body { font-family: Arial, sans-serif; margin: 20px; background-color: #f4f4f4; color: #333; }
+        h1, h2 { color: #0056b3; }
+        form { margin-bottom: 20px; padding: 15px; border: 1px solid #ddd; border-radius: 8px; background-color: #fff; display: flex; align-items: center; gap: 10px; }
+        input[type="text"] { flex-grow: 1; padding: 10px; border: 1px solid #ccc; border-radius: 4px; font-size: 16px; }
+        button { padding: 10px 15px; background-color: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 16px; transition: background-color 0.3s ease; }
+        button:hover { background-color: #0056b3; }
+        #resultados { margin-top: 20px; padding: 15px; border: 1px solid #ccc; border-radius: 8px; background-color: #fff; min-height: 100px; }
+        .user-item { border-bottom: 1px dashed #eee; padding: 10px 0; }
+        .user-item:last-child { border-bottom: none; }
+        .no-results { color: #888; font-style: italic; }
+        .error-message { color: red; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>Buscar Personas</h1> <form id="miFormulario">
+        <label for="busqueda">Buscar por Nombre, Apellido o Email:</label> <input type="text" id="busqueda" name="busqueda" placeholder="Ej. Juan, Pérez, juan@example.com"> <button type="submit">Buscar Datos</button>
+    </form>
+
+    <h2>Resultados:</h2>
+    <div id="resultados">
+        <p class="no-results">Introduce un término y haz clic en buscar.</p> </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
