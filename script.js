@@ -35,7 +35,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     const userDiv = document.createElement('div');
                     userDiv.classList.add('user-item'); // Para aplicar el estilo CSS simple
                     userDiv.innerHTML = `
-                        <strong>Nombre:</strong> ${user.name || 'N/A'}<br>
+                        <strong>Nombre:</strong> ${user.nombre || 'N/A'}<br>
+                        <strong>Apellido:</strong> ${user.apellido || 'N/A'}<br>
+                        <strong>Edad:</strong> ${user.edad || 'N/A'}<br>
                         <strong>Email:</strong> ${user.email || 'N/A'}<br>
                         `;
                     divResultados.appendChild(userDiv);

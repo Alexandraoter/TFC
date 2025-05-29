@@ -15,8 +15,8 @@ var personSchema = new schema({
         type: String
     }
 },{
-    collection: 'personas'
+    collection: 'Personas'
     // personas porque es lo que esta dentro de la base Person
 });
 
-module.exports = mongoose.model('Persona', personSchema);
+module.exports = mongoose.model('Personas', personSchema);
