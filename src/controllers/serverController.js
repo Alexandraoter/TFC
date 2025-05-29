@@ -70,7 +70,7 @@ class ServerController {
         }
     }
 
-    // *** MÉTODOS PARA REGISTER, UPDATE, DELETE USER ***
+    //MÉTODOS PARA REGISTER, UPDATE, DELETE USER 
     async register(req, res) {
         try {
             const newPerson = new person(req.body); 
