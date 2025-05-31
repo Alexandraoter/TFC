@@ -1,15 +1,14 @@
 const person = require('../models/person'); 
-// Importamos el modelo de la base de datos NoSQL (MongoDB) que hemos creado
+
 
 class ServerController {
 
     
     constructor() {
-        // En un constructor real de una aplicación más grande, aquí podrías
-        // inicializar la conexión a la base de datos o pasarla como dependencia.
+        
     }
 
-    // Obtiene todos los registros de la colección de la base de datos NoSQL
+
     async getAllUsers(req, res) {
         try {
             const data = await person.find({});
@@ -21,7 +20,7 @@ class ServerController {
     }
 
 
-    // Obtiene el registro según el id que le estemos pasando a la colección de la base de datos NoSQL
+   
     async getUsers(req, res) {
         try {
             const id = req.params.id;
@@ -41,7 +40,7 @@ class ServerController {
         }
     }
 
-    // *** FUNCIÓN PARA LA BÚSQUEDA ***
+
     async searchUsers(req, res) {
         try {
             const searchTerm = req.query.q;
@@ -50,10 +49,7 @@ class ServerController {
                 return res.status(400).json({ message: "El término de búsqueda 'q' es requerido." });
             }
 
-            // Búsqueda en los campos 'nombre', 'apellido', y 'email' usando expresiones regulares
-            // $regex: busca un patrón (el término de búsqueda)
-            // $options: 'i': hace la búsqueda insensible a mayúsculas y minúsculas
-            // $or: permite que el documento coincida si cualquiera de las condiciones es verdadera
+    
             const results = await person.find({
                 $or: [
                     { nombre: { $regex: searchTerm, $options: 'i' } },

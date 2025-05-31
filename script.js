@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const divResultados = document.getElementById('resultados');
 
     miFormulario.addEventListener('submit', async (event) => {
-        event.preventDefault(); // Previene el envío tradicional del formulario para manejarlo con JS
+        event.preventDefault(); // Previene el envío tradicional del formulario 
 
         const terminoBusqueda = inputBusqueda.value;
 

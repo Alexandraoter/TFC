@@ -4,30 +4,23 @@ const serverController = require("../controllers/serverController"); // Asegúra
 class ServerRouter {
     constructor() {
         this.router = express.Router();
-        // <<-- ¡MOVEMOS LA CREACIÓN DE objServerC AQUÍ!
-        // Hacemos que 'objServerC' sea una propiedad de la instancia de la clase 'ServerRouter'
+     
         this.objServerC = new serverController.default();
-        this.config(); // Llama a config después de inicializar this.objServerC
+        this.config(); 
     }
 
     config() {
-        // Ahora, en lugar de declarar una nueva 'objServerC' local,
-        // usamos la propiedad de la instancia 'this.objServerC' para todas las rutas.
+        
         this.router.get("/users", this.objServerC.getAllUsers);
         this.router.get("/users/:id", this.objServerC.getUsers);
-
-        // Rutas POST, PUT, DELETE (descomentadas y usando this.objServerC)
         this.router.post("/users", this.objServerC.register);
-        // NOTA: Ajusté PUT y DELETE para usar :id, como es estándar para actualizar/eliminar específicos.
-        // Si no lo hiciste antes, POR FAVOR, cámbialo en tu archivo serverRouter.js también.
         this.router.put("/users/:id", this.objServerC.update);
         this.router.delete("/users/:id", this.objServerC.deleteUser);
 
-        // ¡NUEVA RUTA DE BÚSQUEDA! (ya está correcta con this.objServerC)
         this.router.get("/api/users/search", this.objServerC.searchUsers);
     }
 
-    // Este método es necesario para que el router pueda ser usado en tu aplicación Express (ej. en app.js)
+
     getRouter() {
         return this.router;
     }
